@@ -1,0 +1,24 @@
+.gallery-wrapper {
+    .gallery {
+
+    }
+    .full-screen {
+        position: fixed;
+        z-index: 1010;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.8);
+        img {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

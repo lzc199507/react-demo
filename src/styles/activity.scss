@@ -1,0 +1,223 @@
+.node--activity {
+    display: flex;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #999;
+    position: relative;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+    overflow: hidden;
+
+    .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        filter: blur(32px);
+        z-index: 1;
+    }
+    .mask {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 5;
+    }
+    .thumbnail {
+        width: 7rem;
+        height: 9.8rem;
+        border-radius: 4px;
+        margin-right: 2rem;
+        position: relative;
+        z-index: 10;
+        border-radius: 4px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .thumbnail__tag {
+            position: absolute;
+            top: -5px;
+            left: 8px;
+            color: #fff;
+            padding: 4px 6px;
+
+            // background: url(~static/activity/discount.png) no-repeat center top;
+
+            background-color:orange;
+
+            background-size: 4rem 4rem;
+            border-radius: 0 0 4px 4px;
+            font-size: 1rem;
+            span {
+                display: block;
+                font-size: 1.4rem;
+                letter-spacing: 1px;
+            }
+        }
+        .thumbnail__hot {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 4px;
+            color: #fff;
+            font-size: 1rem;
+            background-image: linear-gradient(0deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 100%);
+            span {
+                font-size: 1.6rem;
+            }
+        }
+    }
+    .main {
+        flex: 1;
+        position: relative;
+        z-index: 10;
+    }
+    .title {
+        color: #333;
+        font-size: 1.4rem;
+        line-height: 1.2;
+        max-height: 2.4em;
+        overflow: hidden;
+        font-weight: bold;
+        margin: 0 0 .5rem 0;
+    }
+    .date {
+        margin: 0 0 .5rem 0;
+    }
+    .venue {
+        margin: 0 0 .5rem 0;
+    }
+    .tags {
+        .item {
+            display: inline-block;
+            margin: 0 1rem .5rem 0;
+        }
+        .i {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+            margin-right: .5rem;
+        }
+        .flash {
+
+            // background-image: url(~static/icons/flash@2x.png);
+        }
+        .seat {
+            // background-image: url(~static/icons/seat@2x.png);
+
+            
+        }
+        .seat {
+            
+
+        }
+    }
+
+    .price {
+        color: #ff5400;
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        .sub {
+            font-size: 1rem;
+            font-weight: normal;
+            display: inline-block;
+        }
+        .status {
+            font-size: 1rem;
+            color: #ff5400;
+            border: 1px solid #ff5400;
+            border-radius: 4px;
+            padding: 2px 4px;
+            opacity: .5;
+            font-weight: normal;
+        }
+    }
+    .quote {
+        &:before {
+            content: '“';
+        }
+        &:after {
+            content: '”';
+        }
+    }
+    &.vertical {
+        width: 10rem;
+        border: none;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        flex-direction: column;
+        .thumbnail {
+            width: 100%;
+            height: 14rem;
+            margin: 0 0 .5rem 0;
+            border-radius: 4px;
+        }
+        .title {
+            font-weight: normal;
+            font-size: 1.2rem;
+        }
+        .price {
+            font-size: 1.4rem;
+            margin-bottom: .5rem;
+        }
+        .date {
+            color: #999;
+            font-size: 1rem;
+        }
+    }
+    &.primary {
+        width: 100%;
+        padding: 1rem;
+        color: #fff;
+        border-radius: 4px;
+        .title {
+            color: #fff;
+            font-size: 1.6rem;
+            height: 2.4em;
+            overflow: hidden;
+        }
+        .price {
+            font-size: 1.4rem;
+            font-weight: normal;
+            color: #fff;
+        }
+        .date {
+            margin-bottom: 1rem;
+        }
+        .quote {
+            font-size: 1.4rem;
+            min-height: 2.4em;
+            margin-bottom: 1rem;
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
+        .thumbnail {
+            width: 10rem;
+            height: 14rem;
+        }
+    }
+}

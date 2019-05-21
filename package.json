@@ -1,0 +1,58 @@
+{
+  "name": "xishiqu",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "animate": "^1.0.0",
+    "animate.css": "^3.7.0",
+    "antd": "^3.18.2",
+    "antd-mobile": "^2.2.13",
+    "axios": "^0.18.0",
+    "element-react": "^1.4.34",
+    "element-theme-default": "^1.4.13",
+    "element-ui": "^2.8.2",
+    "eventemitter3": "^3.1.2",
+    "express": "^4.17.0",
+    "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.8.7",
+    "react-lazyimg-component": "^0.0.2",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.1",
+    "request": "^2.88.0",
+    "sass-loader": "^7.1.0",
+    "swiper": "^4.5.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-import-resolver-node": "^0.3.2",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "http-proxy-middleware": "^0.19.1",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0"
+  }
+}

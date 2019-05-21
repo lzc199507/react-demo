@@ -1,0 +1,180 @@
+#search {
+    &.page {
+        padding-top: 0;
+        // background-color: #f4f4f4;
+    }
+    a {
+        color: #666;
+        text-decoration: none;
+        list-style: none;
+    }
+    [v-cloak] {
+        display: none;
+    }
+    .orange {
+        color: #ff5400;
+    }
+    .page__search {
+        background: #fff;
+        padding: 0.9rem 1.7rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px #f4f4f4;
+        .search__left {
+            padding: 0.2rem 3rem 0.2rem 1rem;
+            position: relative;
+            background: #EFEFEF;
+            padding: 0.2rem 1rem;
+            flex: 1;
+            display: flex;
+            .icon-search {
+                flex: 0 0 2em;
+                font-size: 18px;
+            }
+            .left__input {
+                flex: 1;
+                border: none;
+                outline: none;
+                background: #EFEFEF;
+                font-size: 12px;
+            }
+            .icon-close {
+                position: absolute;
+                top: 0.2rem;
+                right: 1rem;
+            }
+        }
+        .search__right {
+            flex: 0 0 3em;
+            text-align: right;
+            font-size: 1.4rem;
+        }
+    }
+    .page__content {
+        .initial,
+        .vague {
+            padding: 2.8rem 1.7rem;
+        }
+        .no-resoult,
+        .pager {
+            padding: 3rem 0 ;
+            text-align: center;
+            font-size: 14px;
+        }
+        .history__title {
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0 2.4rem;
+            font-weight: bold;
+            color: #333;
+            .icon-trash {
+                font-size: 20px;
+                font-weight: normal;
+            }
+        }
+        .history_content {
+            margin: 0;
+            padding: 0;
+            .content__li {
+                padding: 0 0 2.4rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                color: #666;
+                list-style: none;
+            }
+        }
+        .vague__content {
+            color: #666;
+            font-size: 1.3rem;
+            .vague-item {
+                display: flex;
+                justify-content: space-between;
+                padding: 1.5rem 0;
+                vertical-align: middle;
+                .item__left {
+                    flex: 1;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding-right: 1rem;
+                }
+                .item__right {
+                    flex: 0 4em;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .hot-show {
+        .show__title {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 0 0 2.4rem;
+            margin: 0;
+        }
+        .show__list {
+            list-style: none;
+            padding: 0;
+            .list__item {
+                float: left;
+                margin-right: 1.2rem;
+                padding: 0.8rem 0.6rem;
+                background: #efefef;
+                color: #0b1b1a;
+                border-radius: 4px;
+                margin-bottom: 1rem;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .search-resoult {
+        .resoult__content {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+            .activity-list {
+                // height: 36rem;
+                // overflow: hidden;
+            }
+            .activity-list,
+            .film-list {
+                &>.title {
+                    font-size: 1.4rem;
+                    padding: 3.1rem 1.7rem 1.4rem;
+                    margin: 0;
+                    background: #f4f4f4;
+                }
+                &>.content {
+                    background-color: #fff;
+                    padding: 0 1.2rem;
+                    .more--activity {
+                        display: flex;
+                        align-items: center;
+                        color: #666;
+                        justify-content: center;
+                        padding: 1.2rem;
+                        font-size: 1.2rem;
+                        .icon-more {
+                            width: 0;
+                            height: 0;
+                            border-left: 0.5rem solid transparent;
+                            border-right: 0.5rem solid transparent;
+                            border-top: 0.5rem solid #666;
+                            margin-left: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
