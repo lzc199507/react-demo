@@ -61,7 +61,7 @@ class Xheader extends Component {
   render () {
     const { cityName } = this.state
     return (
-      <div className="page__header">
+      <div className="page__header fixed">
         <div className="left" onClick={this.navigateTo.bind(this)}>
           <div>
             {cityName}

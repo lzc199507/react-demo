@@ -38,7 +38,7 @@ const Home = (props) => {
 
   return (
     <div id="wrapper-home">
-      <div id="home" className="page">
+      <div id="home" className="page" style={{ paddingTop: ' 4.5rem' }}>
         <Xheader history={history} />
         <div className="block-wrapper">
           <Slideshow data={bannerInfo} />
