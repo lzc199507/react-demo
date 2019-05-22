@@ -3,16 +3,17 @@
 import React, { useState } from 'react'
 import ShowList from './ShowList'
 
+const { Fragment } = React
+
 const Show = (props) => {
   const [currentDay, setCurrentDay] = useState(0)
-  console.log(props)
   const { data } = props
   let titleArr = []
   let listArr = []
   data && data.map((i) => { titleArr.push(i.title); listArr.push(i.list) })
   return (
-    <div className="Show">
-      <div className="block-wrapper">
+    <Fragment>
+      <div className="block">
         <h3 className="block__title">
           七日演出
           <small>
@@ -30,7 +31,7 @@ const Show = (props) => {
         </div>
         <ShowList data={listArr[currentDay]} />
       </div>
-    </div>
+    </Fragment>
   )
 }
 

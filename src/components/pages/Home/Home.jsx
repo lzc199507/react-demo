@@ -2,33 +2,25 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { Route } from 'react-router-dom'
-import Huaju from './Huaju.jsx'
-import Slideshow from './Slideshow.jsx'
 import Xheader from '../../common/Xheader.jsx'
-import Xfooter from '../../common/Xfooter.jsx'
+import Slideshow from './Slideshow.jsx'
 import Hcotegory from './Hcategory.jsx'
 import Recommends from './Recommends.jsx'
 import Show from './Show.jsx'
-// import Hlist from './Hlist.jsx'
-import Concert from './Concert.jsx'
-
-// import MovieData from './MovieData.jsx'
-
+import MainContent from './MainContent'
+import Favours from './Favours'
+import Xfooter from '../../common/Xfooter.jsx'
 
 const Home = (props) => {
   const {
     history, cityCode, dispatch, initListData = {},
   } = props
-  console.log('###', props)
   useEffect(() => {
-    console.log('--', cityCode)
     React.axios.get('http://localhost:1234/getIndexData', {
       params: {
         cityCode,
       },
     }).then((res) => {
-      console.log(res)
       let data = res.data.result
       dispatch({
         type: 'initListData',
@@ -40,7 +32,9 @@ const Home = (props) => {
       })
   }, [cityCode])
 
-  const { activitySevenInfo = [], bannerInfo =[] } = initListData
+  const {
+    activitySevenInfo = [], bannerInfo = [], mktInfo = [], activityCateInfo = [], activityLikeInfo = [],
+  } = initListData
 
   return (
     <div id="wrapper-home">
@@ -48,14 +42,14 @@ const Home = (props) => {
         <Xheader history={history} />
         <div className="block-wrapper">
           <Slideshow data={bannerInfo} />
+          <Hcotegory history={history} />
+          {mktInfo.length !== 0 && <Recommends data={mktInfo} />}
         </div>
         <div className="block-wrapper">
-          <Hcotegory history={history} />
-          <Recommends />
           {activitySevenInfo.length !== 0 && <Show history={history} data={activitySevenInfo} />}
-          <Concert />
-          <Huaju />
-
+          {/* {activityCateInfo.length !== 0 && <Concert data={activityCateInfo} />} */}
+          {activityCateInfo.length !== 0 && <MainContent data={activityCateInfo} />}
+          {activityLikeInfo.length !== 0 && <Favours data={activityLikeInfo} />}
         </div>
         <div className="report">
           <span className="text">

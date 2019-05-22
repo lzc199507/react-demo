@@ -3,7 +3,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const ShowList = (props) => {
-  console.log(props)
   const { data = [] } = props
 
   const getContent = (data1) => {
@@ -51,7 +50,7 @@ const ShowList = (props) => {
       }
       {
         data.length !== 0 && (
-          <div className="wrapper" style={{ width: `${11.2*data.length}rem` }}>
+          <div className="wrapper" style={{ width: `${11.2 * data.length}rem` }}>
             {
               getContent(data)
             }

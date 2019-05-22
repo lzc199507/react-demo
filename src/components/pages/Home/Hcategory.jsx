@@ -2,16 +2,13 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react'
-
 import { connect } from 'react-redux'
 
 class Hcategory extends Component {
   constructor (props) {
     super(props)
     this.props = props
-    // console.log('************', this.props)
     this.state = {
-      nav: 0,
       CtList: [
         {
           text: '演唱会',

@@ -1,15 +1,12 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable class-methods-use-this */
 import React, { useEffect } from 'react'
 import Swiper from 'swiper'
 
 const Slideshow = (props) => {
-  console.log('#######', props)
   const { data } = props
-  useEffect(() => {
-    console.log('Slideshow')
-    lunbo()
-  }, [data])
+
   const lunbo = () => {
     // eslint-disable-next-line no-unused-vars
     let swiper = new Swiper('.swiper-container', {
@@ -30,6 +27,11 @@ const Slideshow = (props) => {
       },
     })
   }
+
+  useEffect(() => {
+    lunbo()
+  }, [data])
+
   return (
     <div className="Lunbo">
       <div className="block-wrapper">
