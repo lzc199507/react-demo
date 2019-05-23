@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const Recommends = (props) => {
-  const { data } = props
+const Recommends = ({ data }) => {
   return (
     <div className="recommends">
       <div className="main">
@@ -60,6 +59,10 @@ const Recommends = (props) => {
       </div>
     </div>
   )
+}
+
+Recommends.propTypes = {
+  data: PropTypes.array,
 }
 
 export default Recommends

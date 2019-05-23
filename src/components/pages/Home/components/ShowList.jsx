@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const ShowList = (props) => {
   const { data = [] } = props
@@ -59,6 +59,10 @@ const ShowList = (props) => {
       }
     </div>
   )
+}
+
+ShowList.propTypes = {
+  data: PropTypes.array,
 }
 
 export default ShowList

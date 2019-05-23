@@ -1,7 +1,7 @@
 {
   "name": "xishiqu",
   "version": "0.1.0",
-  "private": true,
+  "author": "linzhicheng",
   "dependencies": {
     "animate": "^1.0.0",
     "animate.css": "^3.7.0",
@@ -16,6 +16,7 @@
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
     "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.8.6",

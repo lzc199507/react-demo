@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
-import Home from './components/pages/Home/Home.jsx'
+import Home from './components/pages/Home'
 import List from './components/pages/List/List.jsx'
 import CityList from './components/pages/City/CityList.jsx'
 import Search from './components/pages/Search/Search.jsx'
-import Detail from './components/pages/Detail/Detail.jsx'
+// import Detail from './components/pages/Detail/Detail.jsx'
+import Detail from './components/pages/Detail'
 import Movie from './components/pages/Detail/Movie.jsx'
 import Comment from './components/pages/Detail/Comment.jsx'
 

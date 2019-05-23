@@ -1,15 +1,14 @@
-/* eslint-disable guard-for-in */
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import Xheader from '../../common/Xheader.jsx'
-import Slideshow from './Slideshow.jsx'
-import Hcotegory from './Hcategory.jsx'
-import Recommends from './Recommends.jsx'
-import Show from './Show.jsx'
-import MainContent from './MainContent'
-import Favours from './Favours'
-import Xfooter from '../../common/Xfooter.jsx'
+import PropTypes from 'prop-types'
+import Xheader from '../../common/Xheader'
+import Slideshow from './components/Slideshow'
+import Hcotegory from './components/Hcategory'
+import Recommends from './components/Recommends'
+import Show from './components/Show'
+import MainContent from './components/MainContent'
+import Favours from './components/Favours'
+import Xfooter from '../../common/Xfooter'
 
 const Home = (props) => {
   const {
@@ -33,7 +32,8 @@ const Home = (props) => {
   }, [cityCode])
 
   const {
-    activitySevenInfo = [], bannerInfo = [], mktInfo = [], activityCateInfo = [], activityLikeInfo = [],
+    activitySevenInfo = [], bannerInfo = [], mktInfo = [],
+    activityCateInfo = [], activityLikeInfo = [], frontCateInfo = [],
   } = initListData
 
   return (
@@ -42,12 +42,11 @@ const Home = (props) => {
         <Xheader history={history} />
         <div className="block-wrapper">
           <Slideshow data={bannerInfo} />
-          <Hcotegory history={history} />
+          {frontCateInfo.length !== 0 && <Hcotegory data={frontCateInfo} history={history} />}
           {mktInfo.length !== 0 && <Recommends data={mktInfo} />}
         </div>
         <div className="block-wrapper">
           {activitySevenInfo.length !== 0 && <Show history={history} data={activitySevenInfo} />}
-          {/* {activityCateInfo.length !== 0 && <Concert data={activityCateInfo} />} */}
           {activityCateInfo.length !== 0 && <MainContent data={activityCateInfo} />}
           {activityLikeInfo.length !== 0 && <Favours data={activityLikeInfo} />}
         </div>
@@ -63,6 +62,13 @@ const Home = (props) => {
     </div>
 
   )
+}
+
+Home.propTypes = {
+  cityCode: PropTypes.string,
+  initListData: PropTypes.object,
+  history: PropTypes.object,
+  dispatch: PropTypes.func,
 }
 
 export default connect((state) => {

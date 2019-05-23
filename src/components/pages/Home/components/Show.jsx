@@ -1,13 +1,11 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import ShowList from './ShowList'
 
 const { Fragment } = React
 
-const Show = (props) => {
+const Show = ({ data }) => {
   const [currentDay, setCurrentDay] = useState(0)
-  const { data } = props
   let titleArr = []
   let listArr = []
   data && data.map((i) => { titleArr.push(i.title); listArr.push(i.list) })
@@ -22,17 +20,21 @@ const Show = (props) => {
         </h3>
         <div className="weekdays">
           {
-						titleArr && titleArr.map((i, idx) => {
-						  return (
-  							<span className={idx === currentDay ? 'item active' : 'item'} onClick={() => setCurrentDay(idx)} key={idx}>{i}</span>
-						  )
-						})
-					}
+            titleArr && titleArr.map((i, idx) => {
+              return (
+                <span className={idx === currentDay ? 'item active' : 'item'} onClick={() => setCurrentDay(idx)} key={idx}>{i}</span>
+              )
+            })
+          }
         </div>
         <ShowList data={listArr[currentDay]} />
       </div>
     </Fragment>
   )
+}
+
+Show.propTypes = {
+  data: PropTypes.array,
 }
 
 export default Show

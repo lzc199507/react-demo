@@ -1,8 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
 import { Link } from 'react-router-dom'
-
-const { Fragment } = React
+import PropTypes from 'prop-types'
 
 const Favours = ({ data }) => {
   return (
@@ -26,18 +24,16 @@ const Favours = ({ data }) => {
               </div>
               <div className="tags" />
               <div className="price">
+                <div>
+                  <span>
+                    ￥
+                    {item.lowPrice}
+                  </span>
+                  <span className="sub">起</span>
+                </div>
                 {
                   item.isPreSale !== 0 && (
-                    <Fragment>
-                      <div>
-                        <span>
-                          ￥
-                          {item.lowPrice}
-                        </span>
-                        <span className="sub">起</span>
-                      </div>
-                      <div className="status">预定中</div>
-                    </Fragment>
+                    <div className="status">预定中</div>
                   )
                 }
               </div>
@@ -50,6 +46,10 @@ const Favours = ({ data }) => {
       }
     </div>
   )
+}
+
+Favours.propTypes = {
+  data: PropTypes.array,
 }
 
 export default Favours

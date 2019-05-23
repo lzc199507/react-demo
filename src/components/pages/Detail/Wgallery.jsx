@@ -1,27 +1,30 @@
-import React from "react";
-import { connect } from 'react-redux';
+import React from 'react'
+import { connect } from 'react-redux'
+
 class Wgallery extends React.Component {
-    constructor(props) {
-        super(props)
-        this.props = props;
-        console.log(props)
-        this.state = {
-            bigPic:this.props.chuan
-        }
+  constructor (props) {
+    super(props)
+    this.props = props
+    console.log(props)
+    this.state = {
+      bigPic: this.props.chuan,
     }
-    render() {
-        return (
-            <div className="full-screen  swiper-container-horizontal swiper-container-ios" 
-            style={{ display: this.props.isShowGallery.bool?'block':'none'}} 
-            onClick={this.props.toggleGallery.bind(this)}>
-                            <div className="swiper-wrapper" >
+  }
+
+  render () {
+    return (
+      <div className="full-screen  swiper-container-horizontal swiper-container-ios" 
+        style={{ display: this.props.isShowGallery.bool ? 'block' : 'none' }} 
+        onClick={this.props.toggleGallery.bind(this)}
+      >
+        <div className="swiper-wrapper">
                              
-                                            <div className="swiper-slide" style={{width: "375px"}} >
-                                    <img src={this.props.isShowGallery.src} alt="adasdsd" />
+          <div className="swiper-slide" style={{ width: '375px' }}>
+            <img src={this.props.isShowGallery.src} alt="adasdsd" />
                                     
-                                </div>
+          </div>
                               
-                               {/* <div className="swiper-slide" style={{width: "375px"}}>
+          {/* <div className="swiper-slide" style={{width: "375px"}}>
                                     <img className="swiper-lazy swiper-lazy-loaded" src="http://image.xishiqu.cn/upload/activity/000/000/934//o/CDD57B6D-F7A7-FEBD-3B64-EF79D21B55AE.jpg"/>
                                     
                                 </div>
@@ -40,27 +43,26 @@ class Wgallery extends React.Component {
                                         <div className="swiper-lazy-preloader swiper-lazy-preloader-white">
                                         </div>
                                     
-                                </div>*/}
-                            </div>
-                            <span aria-atomic="true" aria-live="assertive" className="swiper-notification">
-                            </span>
-                        </div>
-        )
-    }
+                                </div> */}
+        </div>
+        <span aria-atomic="true" aria-live="assertive" className="swiper-notification" />
+      </div>
+    )
+  }
 }
 
-export default connect((state)=>{
-    return state
-},(dispatch=>{
-    return {
-		toggleGallery(){
-			dispatch({
-				type:"toggleGallery",
-				isShowGallery:{
-					bool: !this.props.isShowGallery.bool,
-        			src:""
-				}
-			})
-		}
-	}
-}))(Wgallery);
+export default connect((state) => {
+  return state
+}, ((dispatch) => {
+  return {
+    toggleGallery () {
+      dispatch({
+        type: 'toggleGallery',
+        isShowGallery: {
+          bool: !this.props.isShowGallery.bool,
+        			src: '',
+        },
+      })
+    },
+  }
+}))(Wgallery)

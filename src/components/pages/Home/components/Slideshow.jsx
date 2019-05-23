@@ -1,12 +1,9 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable class-methods-use-this */
 import React, { useEffect } from 'react'
 import Swiper from 'swiper'
+import PropTypes from 'prop-types'
 
-const Slideshow = (props) => {
-  const { data } = props
-
+const Slideshow = ({ data }) => {
   const lunbo = () => {
     // eslint-disable-next-line no-unused-vars
     let swiper = new Swiper('.swiper-container', {
@@ -52,6 +49,10 @@ const Slideshow = (props) => {
       </div>
     </div>
   )
+}
+
+Slideshow.propTypes = {
+  data: PropTypes.array,
 }
 
 export default Slideshow

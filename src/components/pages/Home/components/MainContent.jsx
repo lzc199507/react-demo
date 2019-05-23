@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const { Fragment } = React
 
@@ -143,6 +143,10 @@ const MainContent = ({ data }) => {
       }
     </Fragment>
   )
+}
+
+MainContent.propTypes = {
+  data: PropTypes.array,
 }
 
 export default MainContent
