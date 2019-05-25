@@ -74,6 +74,7 @@ class listHeader extends Component {
             <i onClick={this.backHome.bind(this)} className="icon icon-angle-left" />
             <div onClick={this.navigateTo.bind(this)}>
               {cityName}
+              &nbsp;
               <i className="icon icon-angle-down" />
             </div>
           </div>

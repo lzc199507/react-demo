@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Xheader from '../../common/Xheader'
 import Slideshow from './components/Slideshow'
-import Hcotegory from './components/Hcategory'
+import Xcategory from '../../common/Xcategory'
 import Recommends from './components/Recommends'
 import Show from './components/Show'
 import MainContent from './components/MainContent'
@@ -15,25 +15,15 @@ const Home = (props) => {
     history, cityCode, dispatch, initListData = {},
   } = props
   useEffect(() => {
-    React.axios.get('http://localhost:1234/getIndexData', {
-      params: {
-        cityCode,
-      },
-    }).then((res) => {
-      let data = res.data.result
-      dispatch({
-        type: 'initListData',
-        initListData: data,
-      })
+    dispatch({
+      type: 'init',
+      Title: '启动项目!',
     })
-      .catch((err) => {
-        console.log(err)
-      })
-  }, [cityCode])
+  }, [])
 
   const {
     activitySevenInfo = [], bannerInfo = [], mktInfo = [],
-    activityCateInfo = [], activityLikeInfo = [], frontCateInfo = [],
+    activityCateInfo = [], activityLikeInfo = [],
   } = initListData
 
   return (
@@ -42,7 +32,7 @@ const Home = (props) => {
         <Xheader history={history} />
         <div className="block-wrapper">
           <Slideshow data={bannerInfo} />
-          {frontCateInfo.length !== 0 && <Hcotegory data={frontCateInfo} history={history} />}
+          <Xcategory history={history} />
           {mktInfo.length !== 0 && <Recommends data={mktInfo} />}
         </div>
         <div className="block-wrapper">
@@ -58,9 +48,7 @@ const Home = (props) => {
         </div>
       </div>
       <Xfooter history={history} tabNav={0} />
-
     </div>
-
   )
 }
 

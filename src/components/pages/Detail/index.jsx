@@ -20,14 +20,13 @@ const Detail = (props) => {
       },
     })
       .then((res) => {
-        setDetailInfo(res.data.result.activity)
+        res.data.result.activity && setDetailInfo(res.data.result.activity)
         res.data.result.activitySeries && setActivitySeries(res.data.result.activitySeries)
       })
       .catch((error) => {
         console.log(error)
       })
   }
-
   useEffect(() => {
     window.scrollTo(0, 0)
     getDetailInfo()

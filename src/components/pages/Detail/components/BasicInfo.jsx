@@ -7,7 +7,7 @@ const BasicInfo = ({ data = {} }) => {
       <div className="bg" style={{ backgroundImage: `url(${data.thumbnail})` }} />
       <div className="mask" />
       <div className="thumbnail">
-        <img className="thumbnail__img" src={`${data.thumbnail}`} alt="avatar" />
+        {data.thumbnail && <img className="thumbnail__img" src={`${data.thumbnail}`} alt="avatar" />}
       </div>
       <div className="main">
         <h1 className="title">
@@ -29,7 +29,7 @@ const BasicInfo = ({ data = {} }) => {
           </div>
         </div>
         {
-          data.sellerCnt !== 0 && (
+          data.sellerCnt && data.sellerCnt !== 0 && (
             <div className="price">
               {data.minPrice}
               &nbsp;

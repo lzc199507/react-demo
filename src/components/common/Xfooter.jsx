@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
 
 const footerNav = [
   {
@@ -30,13 +31,17 @@ const footerNav = [
 ]
 
 const Xfooter = (props) => {
-  const { tabNav, history } = props
+  const { tabNav, history, dispatch } = props
   const [nav, setNav] = useState(0)
   useEffect(() => {
     setNav(tabNav)
   }, [tabNav])
 
   const navTo = (index) => {
+    dispatch({
+      type: 'setCategoryIdx',
+      categoryIdx: 0,
+    })
     history.push({ pathname: footerNav[index].path })
   }
 
@@ -54,4 +59,4 @@ const Xfooter = (props) => {
   )
 }
 
-export default Xfooter
+export default connect()(Xfooter)

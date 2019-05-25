@@ -1,11 +1,12 @@
 import { setCookie } from './utils'
 
 const defaultState = {
+  Title: '',
   initListData: {},
   isShowOrder: '',
   isCalendar: false,
   isShowBox: false,
-  cityCode: '021',
+  cityCode: '',
   cityName: '上海',
   categoryIdx: 0,
   isShowNav: false,
@@ -17,6 +18,11 @@ const defaultState = {
 
 export default function reducer (state = defaultState, action) {
   switch (action.type) {
+    case 'init':
+      return {
+        ...state,
+        Title: action.Title,
+      }
     case 'setCityCode':
       setCookie('cityCode', action.cityCode)
       return {
