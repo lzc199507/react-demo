@@ -4,13 +4,16 @@ import { connect } from 'react-redux'
 import Xheader from '../../common/Xheader'
 import Xcategory from '../../common/Xcategory'
 import Xfooter from '../../common/Xfooter'
+import ActivityList from './components/ActivityList'
+import Test from './components/Calendar'
 import { queryCategoryList } from '../../../server'
 
 const List = (props) => {
   const {
-    cityCode, dispatch, history, frontCate,
+    cityCode, dispatch, history, frontCate, list, date, order, page,
   } = props
-  console.log(props)
+
+  const [isFilm, setIsFilm] = useState(false)
 
   useEffect(() => {
     dispatch({
@@ -21,25 +24,23 @@ const List = (props) => {
 
   useEffect(() => {
     if (cityCode !== '') {
-      console.log('cityCode', cityCode)
-      console.log('frontCate', frontCate)
+      frontCate === 'film' ? setIsFilm(true) : setIsFilm(false)
       const params = {
         frontCate,
-        date: '',
-        order: '-1',
-        page: '1',
+        date,
+        order,
+        page,
         cityCode,
       }
       console.log(params)
       queryCategoryList(params).then((res) => {
-        console.log(res)
-        // store.dispatch({
-        //   type: 'initListData',
-        //   initListData: res.data.result,
-        // })
+        dispatch({
+          type: 'setListData',
+          payload: res.data.result,
+        })
       })
     }
-  }, [frontCate, cityCode])
+  }, [frontCate, cityCode, date, order, page])
 
   const XheaderProps = {
     showBack: true,
@@ -55,7 +56,9 @@ const List = (props) => {
     <div id="wrapper-category">
       <div id="category" className="page">
         <Xheader {...XheaderProps} />
-        <div className="sticky"><Xcategory {...XcategoryProps} /></div>
+        <Test />
+        <div className=""><Xcategory {...XcategoryProps} /></div>
+        <ActivityList data={list} isFilm={isFilm} />
       </div>
       <Xfooter history={history} tabNav={1} />
     </div>
@@ -63,10 +66,16 @@ const List = (props) => {
 }
 
 export default connect((state) => {
-  const { cityCode, initListData, categoryIdx } = state
+  const {
+    cityCode, initIndexData, categoryIdx, listData,
+  } = state
+  const { list, queryParams } = listData
+  const { date, order, page } = queryParams
   let frontCate = ''
   if (categoryIdx !== 0) {
-    frontCate = initListData.frontCateInfo[categoryIdx - 1].pinyinName
+    frontCate = initIndexData.frontCateInfo[categoryIdx - 1].pinyinName
   }
-  return { cityCode, frontCate }
+  return {
+    cityCode, frontCate, list, date, order, page,
+  }
 })(List)

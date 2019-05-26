@@ -58,7 +58,7 @@ Xcategory.propTypes = {
 }
 
 export default connect((state) => {
-  const { initListData, categoryIdx } = state
-  const { frontCateInfo: data } = initListData
+  const { initIndexData, categoryIdx } = state
+  const { frontCateInfo: data } = initIndexData
   return { data, categoryIdx }
 })(Xcategory)

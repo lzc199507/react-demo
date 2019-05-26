@@ -21,8 +21,8 @@ store.subscribe(() => {
       console.log('cityCode changed from', previousValue, 'to', currentValue)
       queryIndexData({ cityCode: currentValue }).then((res) => {
         store.dispatch({
-          type: 'initListData',
-          initListData: res.data.result,
+          type: 'initIndexData',
+          initIndexData: res.data.result,
         })
       })
     }

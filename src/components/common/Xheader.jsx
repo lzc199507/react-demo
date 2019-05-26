@@ -1,13 +1,23 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { connect } from 'react-redux'
+import SortsModal from './SortsModal'
 
 const Xheader = (props) => {
-  const { cityName, showBack = false, history } = props
+  const {
+    cityName, showBack = false, history, dispatch,
+  } = props
   const navigateTo = () => { history.push({ pathname: '/city' }) }
   const linkToSearch = () => { history.push({ pathname: '/search' }) }
   const backHome = () => { history.push({ pathname: '/' }) }
-  const handleSorts = () => {}
+  const handleSorts = () => {
+    dispatch({
+      type: 'setListData',
+      payload: {
+        showSortsModal: true,
+      },
+    })
+  }
   const handleDate = () => {}
 
   const homeRightNode = (
@@ -32,7 +42,7 @@ const Xheader = (props) => {
   )
 
   return (
-    <div className="page__header fixed">
+    <div className="page__header">
       <div className="left">
         {showBack && (<i onClick={backHome} className="icon icon-angle-left" />)}
         <div onClick={navigateTo}>
@@ -48,6 +58,7 @@ const Xheader = (props) => {
         </div>
       </div>
       {showBack ? listRightNode : homeRightNode}
+      <SortsModal />
     </div>
   )
 }

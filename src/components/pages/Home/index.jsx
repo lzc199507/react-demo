@@ -12,7 +12,7 @@ import Xfooter from '../../common/Xfooter'
 
 const Home = (props) => {
   const {
-    history, cityCode, dispatch, initListData = {},
+    history, cityCode, dispatch, initIndexData = {},
   } = props
   useEffect(() => {
     dispatch({
@@ -24,11 +24,11 @@ const Home = (props) => {
   const {
     activitySevenInfo = [], bannerInfo = [], mktInfo = [],
     activityCateInfo = [], activityLikeInfo = [],
-  } = initListData
+  } = initIndexData
 
   return (
     <div id="wrapper-home">
-      <div id="home" className="page" style={{ paddingTop: ' 4.5rem' }}>
+      <div id="home" className="page" style={{ paddingTop: ' 0rem' }}>
         <Xheader history={history} />
         <div className="block-wrapper">
           <Slideshow data={bannerInfo} />
@@ -54,12 +54,12 @@ const Home = (props) => {
 
 Home.propTypes = {
   cityCode: PropTypes.string,
-  initListData: PropTypes.object,
+  initIndexData: PropTypes.object,
   history: PropTypes.object,
   dispatch: PropTypes.func,
 }
 
 export default connect((state) => {
-  const { cityCode, initListData } = state
-  return { cityCode, initListData }
+  const { cityCode, initIndexData } = state
+  return { cityCode, initIndexData }
 })(Home)

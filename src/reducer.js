@@ -2,7 +2,16 @@ import { setCookie } from './utils'
 
 const defaultState = {
   Title: '',
-  initListData: {},
+  initIndexData: {},
+  listData: {
+    list: [],
+    showSortsModal: false,
+    queryParams: {
+      date: '',
+      order: '-1',
+      page: '1',
+    },
+  },
   isShowOrder: '',
   isCalendar: false,
   isShowBox: false,
@@ -17,11 +26,17 @@ const defaultState = {
 }
 
 export default function reducer (state = defaultState, action) {
+  const { payload } = action
   switch (action.type) {
     case 'init':
       return {
         ...state,
         Title: action.Title,
+      }
+    case 'initIndexData':
+      return {
+        ...state,
+        initIndexData: action.initIndexData,
       }
     case 'setCityCode':
       setCookie('cityCode', action.cityCode)
@@ -62,14 +77,15 @@ export default function reducer (state = defaultState, action) {
         categoryIdx: action.categoryIdx,
       }
     case 'setListData':
+      state.listData = { ...state.listData, ...payload }
       return {
         ...state,
-        initListData: action.initListData,
       }
-    case 'initListData':
+    case 'setQueryParams':
+      console.log('payload', payload)
+      state.listData.queryParams = { ...state.listData.queryParams, ...payload }
       return {
         ...state,
-        initListData: action.initListData,
       }
 
     default:
