@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import { setCookie } from 'utils'
 import listReducer from './listReducer'
+import movieReducer from './movieReducer'
 
 const defaultState = {
   Title: '',
@@ -50,4 +51,5 @@ function appReducer (state = defaultState, action) {
 export default combineReducers({
   app: appReducer,
   listPage: listReducer,
+  movie: movieReducer,
 })

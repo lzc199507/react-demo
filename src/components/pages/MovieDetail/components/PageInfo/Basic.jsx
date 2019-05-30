@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Basic = ({ data }) => {
+const Basic = ({ data, history }) => {
   return (
     <div className="info__basic">
       <div className="basic__big">
         <img className="big__img" alt="pic" src={data.filmVideoImgUrl} />
-        <i onClick={() => console.log(1)} className="icon icon-angle-left" />
+        <i onClick={() => history.go(-1)} className="icon icon-angle-left" />
       </div>
       <div className="basic__intro">
         <h3 className="intro__text intro__title">
@@ -71,6 +71,7 @@ const Basic = ({ data }) => {
 
 Basic.propTypes = {
   data: PropTypes.object,
+  history: PropTypes.object,
 }
 
 export default Basic
