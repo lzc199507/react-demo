@@ -58,12 +58,12 @@ const Xheader = (props) => {
         </div>
       </div>
       {showBack ? listRightNode : homeRightNode}
-      <SortsModal />
+      {showBack && <SortsModal />}
     </div>
   )
 }
 
 export default connect((state) => {
-  const { cityName } = state
+  const { cityName } = state.app
   return { cityName }
 })(Xheader)

@@ -5,7 +5,7 @@ import Xheader from '../../common/Xheader'
 import Xcategory from '../../common/Xcategory'
 import Xfooter from '../../common/Xfooter'
 import ActivityList from './components/ActivityList'
-import Test from './components/Calendar'
+// import Test from './components/Calendar'
 import { queryCategoryList } from '../../../server'
 
 const List = (props) => {
@@ -16,6 +16,7 @@ const List = (props) => {
   const [isFilm, setIsFilm] = useState(false)
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     dispatch({
       type: 'init',
       Title: '启动项目!',
@@ -32,7 +33,7 @@ const List = (props) => {
         page,
         cityCode,
       }
-      console.log(params)
+      // console.log(params)
       queryCategoryList(params).then((res) => {
         dispatch({
           type: 'setListData',
@@ -56,9 +57,9 @@ const List = (props) => {
     <div id="wrapper-category">
       <div id="category" className="page">
         <Xheader {...XheaderProps} />
-        <Test />
+        {/* <Test /> */}
         <div className=""><Xcategory {...XcategoryProps} /></div>
-        <ActivityList data={list} isFilm={isFilm} />
+        <ActivityList data={list} isFilm={isFilm} history={history} />
       </div>
       <Xfooter history={history} tabNav={1} />
     </div>
@@ -67,8 +68,9 @@ const List = (props) => {
 
 export default connect((state) => {
   const {
-    cityCode, initIndexData, categoryIdx, listData,
-  } = state
+    cityCode, initIndexData, categoryIdx,
+  } = state.app
+  const { listData } = state.listPage
   const { list, queryParams } = listData
   const { date, order, page } = queryParams
   let frontCate = ''

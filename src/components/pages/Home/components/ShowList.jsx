@@ -9,6 +9,16 @@ const ShowList = (props) => {
     return data1.map((item, idx) => (
       <Link key={idx} className="node node--activity vertical" to={`/detail/${item.pinyinName}`}>
         <div className="thumbnail" style={{ backgroundImage: `url(${item.actImgUrl})`, width: '10rem' }}>
+          {
+            item.maxDiscount !== '' && (
+              <div className="thumbnail__tag">
+                <span>
+                  {item.maxDiscount}
+                </span>
+                折 起
+              </div>
+            )
+          }
           <div className="thumbnail__hot">
             <span>
               {item.hotLevel}

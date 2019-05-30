@@ -72,7 +72,7 @@ SortsModal.propTypes = {
 }
 
 export default connect((state) => {
-  const { listData } = state
+  const { listData } = state.listPage
   const { showSortsModal } = listData
   return { showSortsModal }
 })(SortsModal)

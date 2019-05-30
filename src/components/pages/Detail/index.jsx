@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react'
+import { queryActivityDetail } from 'server'
 import Header from './components/Header'
 import BasicInfo from './components/BasicInfo'
 import ActivityInfo from './components/ActivityInfo'
@@ -13,12 +14,9 @@ const Detail = (props) => {
   const [detailInfo, setDetailInfo] = useState({})
   const [activitySeries, setActivitySeries] = useState([])
 
-  const getDetailInfo = () => {
-    React.axios.get('http://localhost:1234/goDetail', {
-      params: {
-        pinyinName: name,
-      },
-    })
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    queryActivityDetail({ pinyinName: name })
       .then((res) => {
         res.data.result.activity && setDetailInfo(res.data.result.activity)
         res.data.result.activitySeries && setActivitySeries(res.data.result.activitySeries)
@@ -26,10 +24,6 @@ const Detail = (props) => {
       .catch((error) => {
         console.log(error)
       })
-  }
-  useEffect(() => {
-    window.scrollTo(0, 0)
-    getDetailInfo()
   }, [])
   return (
     <div id="wrapper-activity">

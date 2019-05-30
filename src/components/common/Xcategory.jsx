@@ -26,7 +26,9 @@ const Xcategory = (props) => {
   const chooseNav = (i) => {
     dispatch({
       type: 'setCategoryIdx',
-      categoryIdx: showAll ? i : i + 1,
+      payload: {
+        categoryIdx: showAll ? i : i + 1,
+      },
     })
     if (!showAll) {
       history.push({ pathname: '/list' })
@@ -58,7 +60,7 @@ Xcategory.propTypes = {
 }
 
 export default connect((state) => {
-  const { initIndexData, categoryIdx } = state
+  const { initIndexData, categoryIdx } = state.app
   const { frontCateInfo: data } = initIndexData
   return { data, categoryIdx }
 })(Xcategory)

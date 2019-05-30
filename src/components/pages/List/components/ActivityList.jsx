@@ -2,8 +2,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ActivityList = ({ data, isFilm }) => {
-  const linkToDt = name => console.log('name', name)
+const ActivityList = ({ data, isFilm, history }) => {
+  const linkToDetail = name => history.push({ pathname: `/detail/${name}` })
+  const linkToMovieDetail = id => history.push({ pathname: `/moviedetail/${id}` })
+
   return (
     <div className="node-list">
       {
@@ -26,7 +28,7 @@ const ActivityList = ({ data, isFilm }) => {
             )
           }
           return (
-            <div key={index} onClick={() => linkToDt(item.pinyinName)} className="node node--activity horizontal">
+            <div key={index} onClick={() => linkToDetail(item.pinyinName)} className="node node--activity horizontal">
               <div className="thumbnail" style={{ backgroundImage: `url(${item.actImgUrl})` }} />
               <div className="main">
                 <h1 className="title">{item.actName}</h1>
@@ -59,7 +61,7 @@ const ActivityList = ({ data, isFilm }) => {
             )
           }
           return (
-            <div key={index} className="node node--film horizontal">
+            <div key={index} onClick={() => linkToMovieDetail(item.filmId)} className="node node--film horizontal">
               <div className="thumbnail" style={{ backgroundImage: `url(${item.filmImg})` }} />
               <div className="main">
                 <div>
@@ -92,6 +94,7 @@ const ActivityList = ({ data, isFilm }) => {
 ActivityList.propTypes = {
   data: PropTypes.array,
   isFilm: PropTypes.bool,
+  history: PropTypes.object,
 }
 
 export default ActivityList

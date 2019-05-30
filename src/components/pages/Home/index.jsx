@@ -12,12 +12,15 @@ import Xfooter from '../../common/Xfooter'
 
 const Home = (props) => {
   const {
-    history, cityCode, dispatch, initIndexData = {},
+    history, dispatch, initIndexData = {},
   } = props
   useEffect(() => {
+    window.scrollTo(0, 0)
     dispatch({
       type: 'init',
-      Title: '启动项目!',
+      payload: {
+        Title: '启动项目!',
+      },
     })
   }, [])
 
@@ -53,13 +56,12 @@ const Home = (props) => {
 }
 
 Home.propTypes = {
-  cityCode: PropTypes.string,
   initIndexData: PropTypes.object,
   history: PropTypes.object,
   dispatch: PropTypes.func,
 }
 
 export default connect((state) => {
-  const { cityCode, initIndexData } = state
-  return { cityCode, initIndexData }
+  const { initIndexData } = state.app
+  return { initIndexData }
 })(Home)

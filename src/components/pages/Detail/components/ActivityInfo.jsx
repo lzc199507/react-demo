@@ -13,7 +13,7 @@ const ActivityInfo = ({ data = {} }) => {
         </span>
       </div>
       {
-        data.isPreSale && data.isPreSale !== 0 && (
+        data.isPreSale !== 0 && (
           <div className="booking">
             <div className="booking__content info-item" onClick={() => setShowing(true)}>
               <span className="text-content">

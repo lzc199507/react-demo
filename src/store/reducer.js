@@ -1,4 +1,4 @@
-import { setCookie } from './utils'
+import { setCookie } from 'utils'
 
 const defaultState = {
   Title: '',

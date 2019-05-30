@@ -15,7 +15,7 @@ import 'antd-mobile/dist/antd-mobile.css'
 
 import { Provider } from 'react-redux'
 import axios from 'axios'
-import store from './store'
+import store from 'store'
 
 import App from './App'
 import * as serviceWorker from './libs/serviceWorker'

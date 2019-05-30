@@ -1,14 +1,14 @@
 import { createStore } from 'redux'
-import reducer from './reducer'
-import { getCookie } from './utils'
-import { queryIndexData } from './server'
+import { getCookie } from 'utils'
+import { queryIndexData } from 'server'
+import reducer from './reducers'
 
 const store = createStore(reducer)
 
 let toggle = false
 
 function select (state) {
-  return state.cityCode
+  return state.app.cityCode
 }
 let currentValue = ''
 
@@ -22,7 +22,9 @@ store.subscribe(() => {
       queryIndexData({ cityCode: currentValue }).then((res) => {
         store.dispatch({
           type: 'initIndexData',
-          initIndexData: res.data.result,
+          payload: {
+            initIndexData: res.data.result,
+          },
         })
       })
     }
@@ -32,16 +34,20 @@ store.subscribe(() => {
     toggle = true
     console.log('初始化 || 获取并设置cityCode和cityName')
     let golbalCode = getCookie('cityCode')
-    if (golbalCode === '') golbalCode = '021'
+    if (golbalCode === '' || golbalCode === 'undefined') golbalCode = '021'
     store.dispatch({
       type: 'setCityCode',
-      cityCode: golbalCode,
+      payload: {
+        cityCode: golbalCode,
+      },
     })
     let golbalName = getCookie('cityName')
-    if (golbalName === '') golbalName = '上海'
+    if (golbalName === '' || golbalName === 'undefined') golbalName = '上海'
     store.dispatch({
       type: 'setCityName',
-      cityName: golbalName,
+      payload: {
+        cityName: golbalName,
+      },
     })
   }
 })

@@ -2,7 +2,8 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Xfooter from '../../common/Xfooter.jsx'
+import { queryCityList } from 'server'
+import Xfooter from 'components/common/Xfooter'
 
 class CityList extends Component {
   constructor (props) {
@@ -23,18 +24,22 @@ class CityList extends Component {
     const { dispatch } = this.props
     dispatch({
       type: 'setCityCode',
-      cityCode: code,
+      payload: {
+        cityCode: code,
+      },
     })
     dispatch({
       type: 'setCityName',
-      cityName: e.target.innerText,
+      payload: {
+        cityName: e.target.innerText,
+      },
     })
     this.history.go(-1)
   }
 
-  getCityList () {
+  componentDidMount () {
     let arr = []
-    React.axios.get('http://localhost:1234/getCityList',)
+    queryCityList()
       .then((res) => {
         const { result: cityData } = res.data
         for (let i in cityData) {
@@ -50,10 +55,6 @@ class CityList extends Component {
       .catch((err) => {
         console.log(err)
       })
-  }
-
-  componentDidMount () {
-    this.getCityList()
   }
 
   render () {
@@ -92,13 +93,13 @@ class CityList extends Component {
             }
           </ul>
         </div>
-        <Xfooter tabNav={0} history={this.history} />
+        <Xfooter tabNav={-1} history={this.history} />
       </div>
     )
   }
 }
 
 export default connect((state) => {
-  const { cityName } = state
+  const { cityName } = state.app
   return { cityName }
 })(CityList)
