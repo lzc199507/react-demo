@@ -1,3 +1,4 @@
+// import { usePrevious } from './hooks'
 // import dictionary from './dictionary'
 
 // 获取cookie
@@ -30,4 +31,5 @@ module.exports = {
   // dictionary,
   getCookie,
   setCookie,
+  // usePrevious,
 }

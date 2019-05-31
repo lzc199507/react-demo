@@ -25,6 +25,9 @@ const Xcategory = (props) => {
 
   const chooseNav = (i) => {
     dispatch({
+      type: 'resetListData',
+    })
+    dispatch({
       type: 'setCategoryIdx',
       payload: {
         categoryIdx: showAll ? i : i + 1,

@@ -34,6 +34,9 @@ class CityList extends Component {
         cityName: e.target.innerText,
       },
     })
+    dispatch({
+      type: 'resetListData',
+    })
     this.history.go(-1)
   }
 

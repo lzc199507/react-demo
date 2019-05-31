@@ -4136,7 +4136,7 @@ a {
 }
 
 .toast .icon-loading {
-	background: #191919 url(/m/static/img/loading.min.3f0bd6c.gif) 50% no-repeat;
+	background: #191919 url(../imgs/loading.gif) 50% no-repeat;
 	background-size: contain;
 	display: block;
 	width: 6rem;
