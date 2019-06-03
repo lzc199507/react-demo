@@ -43,7 +43,7 @@ const List = (props) => {
         document.body.removeChild(loadingEl)
         dispatch({
           type: 'setListData',
-          payload: res.data.result,
+          payload: res.data.result || [],
         })
       })
     }
@@ -62,13 +62,10 @@ const List = (props) => {
   const activityListProps = {
     data: list,
     page,
-    frontCate,
     isFilm,
     history,
     hasMore,
     changPage (newPage) {
-      console.log('hasMore', hasMore)
-      console.log('newPage', newPage)
       if (hasMore) {
         dispatch({
           type: 'setQueryParams',

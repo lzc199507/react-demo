@@ -2,6 +2,7 @@ const path = require('path')
 
 module.exports = function override (config, env) {
   let newAlias = {
+    src: path.resolve(__dirname, './src'),
     utils: path.resolve(__dirname, './src/utils'),
     server: path.resolve(__dirname, './src/server'),
     store: path.resolve(__dirname, './src/store'),

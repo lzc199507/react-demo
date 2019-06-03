@@ -6,6 +6,8 @@ const allApi = {
   getCityList: `${API}/getCityList`,
   getActivityDetail: `${API}/goDetail`,
   getMovieDetail: `${API}/getMovieData`,
+  getSearchData: `${API}/getSearchData`,
+  getKeywordData: `${API}/getKeywordData`,
 }
 
 module.exports = {

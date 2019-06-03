@@ -13,10 +13,8 @@ const defaultState = {
 
 export default function listReducer (state = defaultState, action) {
   const { payload } = action
-  console.log('payload', payload)
   switch (action.type) {
     case 'setListData':
-      console.log('state', state)
       state.listData.list = [...state.listData.list, ...payload.list]
       state.listData.hasMore = payload.hasMore
       return {
