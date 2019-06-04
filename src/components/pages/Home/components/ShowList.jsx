@@ -34,7 +34,8 @@ const ShowList = (props) => {
             <div>
               <span>
                 ￥
-                {item.lowPrice}
+                {item.lowPrice ? item.lowPrice : '0.00'}
+                &nbsp;
               </span>
               <span className="sub">
                 起

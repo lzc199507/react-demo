@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const { Fragment } = React
 
-const MainContent = ({ data }) => {
+const MainContent = ({ data, handleCheckMore }) => {
   const data1 = JSON.parse(JSON.stringify(data))
   const newData = data1.map((item) => {
     if (item.pinyinName !== 'film' && item.mData) {
@@ -24,7 +24,7 @@ const MainContent = ({ data }) => {
             <div className="block" key={idx}>
               <h3 className="block__title">
                 {item.mTitle}
-                <small>
+                <small onClick={() => handleCheckMore(item.pinyinName)}>
                   查看更多
                 </small>
               </h3>
@@ -147,6 +147,7 @@ const MainContent = ({ data }) => {
 
 MainContent.propTypes = {
   data: PropTypes.array,
+  handleCheckMore: PropTypes.func,
 }
 
 export default MainContent

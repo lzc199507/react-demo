@@ -53,13 +53,17 @@ const AccurateSearch = (props) => {
                             <div className="venue">{item.name}</div>
                             <div className="tags" />
                             <div className="price">
-                              <div>
-                                <span>
-                                  ￥
-                                  {item.lowPrice}
-                                </span>
-                                <span className="sub">起</span>
-                              </div>
+                              {
+                                item.hasTicket ? (
+                                  <div>
+                                    <span>
+                                      ￥
+                                      {item.lowPrice}
+                                    </span>
+                                    <span className="sub">起</span>
+                                  </div>
+                                ) : null
+                              }
                               {
                                 item.isPreSale ? <div className="status">预定中</div> : null
                               }

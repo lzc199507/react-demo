@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import Xheader from '../../common/Xheader'
+// import { catagoryName } from 'utils/dictionary'
+// import abc from 'utils/dictionary'
+import { catagoryIndexInfo, getValue } from 'utils/test'
+import Xheader from 'components/common/Xheader'
+import Xcategory from 'components/common/Xcategory'
+import Xfooter from 'components/common/Xfooter'
 import Slideshow from './components/Slideshow'
-import Xcategory from '../../common/Xcategory'
 import Recommends from './components/Recommends'
 import Show from './components/Show'
 import MainContent from './components/MainContent'
 import Favours from './components/Favours'
-import Xfooter from '../../common/Xfooter'
 
 const Home = (props) => {
   const {
@@ -23,11 +26,26 @@ const Home = (props) => {
       },
     })
   }, [])
-
+  // console.log('catagoryName', catagoryName)
+  // console.log('abc', abc)
   const {
     activitySevenInfo = [], bannerInfo = [], mktInfo = [],
     activityCateInfo = [], activityLikeInfo = [],
   } = initIndexData
+
+  const handleCheckMore = (pyName) => {
+    let idx = getValue(catagoryIndexInfo, pyName)
+    dispatch({
+      type: 'resetListData',
+    })
+    dispatch({
+      type: 'setCategoryIdx',
+      payload: {
+        categoryIdx: idx,
+      },
+    })
+    history.push({ pathname: '/list' })
+  }
 
   return (
     <div id="wrapper-home">
@@ -40,7 +58,7 @@ const Home = (props) => {
         </div>
         <div className="block-wrapper">
           {activitySevenInfo.length !== 0 && <Show history={history} data={activitySevenInfo} />}
-          {activityCateInfo.length !== 0 && <MainContent data={activityCateInfo} />}
+          {activityCateInfo.length !== 0 && <MainContent data={activityCateInfo} handleCheckMore={handleCheckMore} />}
           {activityLikeInfo.length !== 0 && <Favours data={activityLikeInfo} />}
         </div>
         <div className="report">
