@@ -4,7 +4,7 @@ import { querySearchData } from 'server'
 
 const HotShow = (props) => {
   const {
-    cityCode, ifShow, handleSearch,
+    cityCode, ifShow, handleSearch, historySearch = [], handleDeleteHistory,
   } = props
   const [hotList, setHotList] = useState([])
 
@@ -27,6 +27,24 @@ const HotShow = (props) => {
           }
         </ul>
       </div>
+      {
+        historySearch.length > 0 && (
+          <div className="history">
+            <div className="history__title">
+              历史记录
+              <i className="icon icon-trashbin" onClick={handleDeleteHistory} />
+            </div>
+            <ul className="history_content">
+              {
+                historySearch.map((item, idx) => (
+                  // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+                  <li key={idx} className="content__li" onClick={() => handleSearch(item)}>{item}</li>
+                ))
+              }
+            </ul>
+          </div>
+        )
+      }
     </div>
   )
 }
@@ -34,6 +52,9 @@ const HotShow = (props) => {
 HotShow.propTypes = {
   cityCode: PropTypes.string,
   ifShow: PropTypes.bool,
+  handleSearch: PropTypes.func,
+  historySearch: PropTypes.array,
+  handleDeleteHistory: PropTypes.func,
 }
 
 export default HotShow

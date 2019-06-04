@@ -89,16 +89,28 @@ app.get('/getSearchData', (req, res) => {
 app.get('/getKeywordData', (req, res) => {
   res.append('Access-Control-Allow-Origin', '*')
 
-  // console.log(req.query.kw);
-  // console.log(req.query.cityCode);
+  let encodeW = encodeURI(req.query.kw)
 
   request({
-    url: `http://m.xishiqu.com/ajax/keywords?q=${req.query.kw}`,
+    url: `http://m.xishiqu.com/ajax/keywords?q=${encodeW}`,
     headers: {
       Cookie: `cityCode=${req.query.cityCode}`,
       // 'Cookie': `SERVER_ID=a2d781fc-3715eec0; ___rl__test__cookies=1543989938834; OUTFOX_SEARCH_USER_ID_NCOO=6555022.2683485085; stat=6509128; cityCode=${req.query.cityCode}; stat_clientGUID=C4FECF3B-1C4C-18C0-F09F-3A943782E1AA; historySearch=%E8%BF%99%2C; XSRF-TOKEN=eyJpdiI6IjNJSGgyUEhhZGZjSE1KdVZnWncybUE9PSIsInZhbHVlIjoiQTVtTWVheWxOXC82Z2JERjNHUjBjanVSbHc3b1doMDJvQnFBZVoyVFJralliOXY1ZEJSVUY1WGtDaVVZbk50TGpxNDdhYmRBRXh5bklaeHhSSEdZTERnPT0iLCJtYWMiOiIxZGRhZWM3OGM4ZDA1MWYwNWEyYTA3ZTU2Y2VlNzM2ZWUzZDU5NmQ4ZGM2YjQ3ZjIxNWZmMGUwZjgyYzJmMTI3In0%3D; laravel_session=eyJpdiI6IlwvMWZreDFVMEJkaEVcLzFIXC8yZzNXRnc9PSIsInZhbHVlIjoiRVowY29ZbG1Xb3NPQmg2Q3FLbSsyTytLTHR0M1wvOUh1UzVHeVRza3M1STNNem9YT3FZUitGa0tmaUJ2N0NBSDY4MGpXXC9qczRwbFlpdzR3SEpCV0FVZz09IiwibWFjIjoiZTBjOTY3YzA4MWFhZmVmMDAwMjE5NDI0MzBhNjMwOTdhNWQ2YTExYWVkZmRhODg1OWFlMzYwMWZjMjkyZWVmNyJ9`
     },
 
+  }, (err, result, body) => {
+    res.send(body)
+  })
+})
+
+// 获取精确搜索信息
+// http://m.xishiqu.com/ajax/activity/list?q=%E6%9D%8E%E4%BA%91%E8%BF%AA&page=1
+app.get('/getAccurateKeywordData', (req, res) => {
+  res.append('Access-Control-Allow-Origin', '*')
+  let encodeW = encodeURI(req.query.kw)
+
+  request({
+    url: `http://m.xishiqu.com/ajax/activity/list?q=${encodeW}&page=${req.query.page}`,
   }, (err, result, body) => {
     res.send(body)
   })
@@ -138,9 +150,6 @@ app.get('/getIndexData', (req, res) => {
   res.append('Cache-control', 'private, must-revalidate')
   res.append('Pragma', 'no-cache')
   res.append('Expires', -1)
-
-  console.log(req.query)
-
 
   request({
     url: `http://m.xishiqu.com/ajax/home/index?cityCode=${req.query.cityCode}`,

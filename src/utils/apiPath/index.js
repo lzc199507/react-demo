@@ -8,6 +8,7 @@ const allApi = {
   getMovieDetail: `${API}/getMovieData`,
   getSearchData: `${API}/getSearchData`,
   getKeywordData: `${API}/getKeywordData`,
+  getAccurateKeywordData: `${API}/getAccurateKeywordData`,
 }
 
 module.exports = {
