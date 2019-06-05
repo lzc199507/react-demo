@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-// import { catagoryName } from 'utils/dictionary'
-// import abc from 'utils/dictionary'
-import { catagoryIndexInfo, getValue } from 'utils/test'
+import { catagoryIndexInfo, getValue } from 'utils/dictionary'
 import Xheader from 'components/common/Xheader'
 import Xcategory from 'components/common/Xcategory'
 import Xfooter from 'components/common/Xfooter'
@@ -26,8 +24,7 @@ const Home = (props) => {
       },
     })
   }, [])
-  // console.log('catagoryName', catagoryName)
-  // console.log('abc', abc)
+
   const {
     activitySevenInfo = [], bannerInfo = [], mktInfo = [],
     activityCateInfo = [], activityLikeInfo = [],

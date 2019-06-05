@@ -8,7 +8,11 @@ const Show = ({ data }) => {
   const [currentDay, setCurrentDay] = useState(0)
   let titleArr = []
   let listArr = []
-  data && data.map((i) => { titleArr.push(i.title); listArr.push(i.list) })
+  data && data.map((i) => {
+    titleArr.push(i.title)
+    listArr.push(i.list)
+    return null
+  })
   return (
     <Fragment>
       <div className="block">

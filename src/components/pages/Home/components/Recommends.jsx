@@ -1,7 +1,43 @@
-import React from 'react'
+/* eslint-disable radix */
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
+function formatTime (time) {
+  time = String(time)
+  if (time.length < 2) time = `0${time}`
+  return time
+}
+
 const Recommends = ({ data }) => {
+  const [day, setDay] = useState('00')
+  const [hour, setHour] = useState('00')
+  const [min, setMin] = useState('00')
+  const [sec, setSec] = useState('00')
+
+  const getD = (endTime) => {
+    let left = (new Date(endTime)).getTime() - (new Date()).getTime()
+    let d = formatTime(parseInt(left / 1000 / 60 / 60 / 24))
+    let h = formatTime(parseInt(left / 1000 / 60 / 60 % 24))
+    let m = formatTime(parseInt(left / 1000 / 60 % 60))
+    let s = formatTime(parseInt(left / 1000 % 60))
+    setDay(d)
+    setHour(h)
+    setMin(m)
+    setSec(s)
+  }
+
+  useEffect(() => {
+    if (data[0].nextStartTime !== '') {
+      let timer = setInterval(() => {
+        getD(data[0].nextStartTime)
+      }, 1000)
+
+      return () => {
+        clearInterval(timer)
+      }
+    }
+  }, [data[0].nextStartTime])
+
   return (
     <div className="recommends">
       <div className="main">
@@ -13,19 +49,19 @@ const Recommends = ({ data }) => {
           </h4>
           <div className="count-down">
             <span className="i">
-              00
+              {day}
             </span>
               天
             <span className="i">
-              00
+              {hour}
             </span>
               :
             <span className="i">
-               00
+              {min}
             </span>
               :
             <span className="i">
-               00
+              {sec}
             </span>
           </div>
           <div className="next">

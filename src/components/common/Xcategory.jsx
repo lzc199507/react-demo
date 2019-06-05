@@ -17,6 +17,7 @@ const Xcategory = (props) => {
   if (showAll) {
     data.length > 0 && data.map((item) => {
       allData.push(item)
+      return null
     })
   }
 
@@ -64,6 +65,6 @@ Xcategory.propTypes = {
 
 export default connect((state) => {
   const { initIndexData, categoryIdx } = state.app
-  const { frontCateInfo: data } = initIndexData
+  const { frontCateInfo: data = [] } = initIndexData
   return { data, categoryIdx }
 })(Xcategory)

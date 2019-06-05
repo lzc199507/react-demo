@@ -24,7 +24,7 @@ const Detail = (props) => {
       .catch((error) => {
         console.log(error)
       })
-  }, [])
+  }, [name])
   return (
     <div id="wrapper-activity">
       <div className="page-group">

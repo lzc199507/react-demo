@@ -17,7 +17,7 @@ const MovieDetail = (props) => {
         type: 'setMovieDetailData',
         payload: { movieDetailInfo: res.data.result },
       }))
-  }, [])
+  }, [filmId, dispatch])
   return (
     <div id="wrapper-films.film">
       <div id="film" className="page">

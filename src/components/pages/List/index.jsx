@@ -21,7 +21,7 @@ const List = (props) => {
       type: 'init',
       Title: '启动项目!',
     })
-  }, [])
+  }, [dispatch])
 
   useEffect(() => {
     if (cityCode !== '') {

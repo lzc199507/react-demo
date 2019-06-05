@@ -26,7 +26,7 @@ const footerNav = [
   {
     text: '我',
     iconClass: 'i my',
-    path: '/my',
+    path: '/member',
   },
 ]
 

@@ -18,7 +18,7 @@ const PageComment = ({ data }) => {
 }
 
 PageComment.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
 }
 
 export default PageComment

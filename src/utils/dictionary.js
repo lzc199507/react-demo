@@ -1,43 +1,38 @@
-import showDic from './dictionaries/show'
-// let showDic = require('./dictionaries/show')
+let catagoryIndexInfo = new Map()
+catagoryIndexInfo.set('yanchanghui', 1)
+catagoryIndexInfo.set('huajugeju', 2)
+catagoryIndexInfo.set('xiuxianyule', 3)
+catagoryIndexInfo.set('film', 4)
+catagoryIndexInfo.set('tiyusaishi', 5)
+catagoryIndexInfo.set('ertongqinzi', 6)
+catagoryIndexInfo.set('yinyuehui', 7)
+catagoryIndexInfo.set('quyizaji', 8)
+catagoryIndexInfo.set('wudaobalei', 9)
 
-console.log('showDic', showDic)
-const dics = Object.assign({}, showDic)
-console.log('dics', dics)
-const a = { ...dics }
-console.log('a', a)
-// module.exports = {
-// export {
-//   ...dics,
-//   getValue: (dic, code) => {
-//     return dic.get(code)
-//   },
-//   getDict: (dic) => {
-//     let list = []
-//     console.log(1212)
-//     for (let node of dic) {
-//       console.log(node)
-//       list.push({ node })
-//     }
-//     return list
-//   },
-//   getProperties: (dic) => {
-//     let list = []
-//     dic.forEach((value, code) => {
-//       list.push({ code, value })
-//     })
-//     return list
-//   },
-//   getList: (dic) => {
-//     let list = []
-//     dic.forEach((value, code) => {
-//       list.push({ code, value })
-//     })
-//     return list
-//   },
-// }
-// export default { ...a }
-export default { ...dics }
-// module.exports = {
-//   ...a,
-// }
+module.exports = {
+  catagoryIndexInfo,
+  getValue: (dic, code) => {
+    return dic.get(code)
+  },
+  getDict: (dic) => {
+    let list = []
+    for (let node of dic) {
+      list.push({ node })
+    }
+    return list
+  },
+  getProperties: (dic) => {
+    let list = []
+    dic.forEach((value, code) => {
+      list.push({ code, value })
+    })
+    return list
+  },
+  getList: (dic) => {
+    let list = []
+    dic.forEach((value, code) => {
+      list.push({ code, value })
+    })
+    return list
+  },
+}
