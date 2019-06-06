@@ -1,10 +1,10 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-html {
+/* html {
 	font-family: sans-serif;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%
-}
-
+} */
+/* 
 body {
 	margin: 0
 }
@@ -830,11 +830,16 @@ small {
   src:url("../fonts/icomoon-wap.eot?e9zojh");
   src:url("../fonts/icomoon-wap.eot?e9zojh#iefix") format("embedded-opentype"),url("../fonts/icomoon-wap.ttf?e9zojh") format("truetype"),url("../fonts/icomoon-wap.woff?e9zojh") format("woff"),url("../fonts/icomoon-wap.svg?e9zojh#icomoon-wap") format("svg");font-weight:normal;font-style:normal
 } */
-@font-face {
+/* @font-face {
+  font-family:'icomoon-wap';
+  src:url("../libs/fonts/memberPage/icomoon-wap.eot?e9zojh");
+  src:url("../libs/fonts/memberPage/icomoon-wap.eot?e9zojh#iefix") format("embedded-opentype"),url("../libs/fonts/memberPage/icomoon-wap.ttf?e9zojh") format("truetype"),url("../libs/fonts/memberPage/icomoon-wap.woff?e9zojh") format("woff"),url("../libs/fonts/memberPage/icomoon-wap.svg?e9zojh#icomoon-wap") format("svg");font-weight:normal;font-style:normal
+} */
+/* @font-face {
 	font-family:iconfont;src:url(../libs/fonts/iconfont.5dad573.eot);src:url(../libs/fonts/iconfont.5dad573.eot#iefix) format("embedded-opentype"),url(../libs/fonts/iconfont.85e328c.ttf) format("truetype"),url(../libs/fonts/iconfont.59dcae0.svg#iconfont) format("svg")
-}
+} */
 
-[class^="icon-"],[class*=" icon-"] {
+/* [class^="icon-"],[class*=" icon-"] {
 	font-family: 'icomoon-wap' !important;
 	speak: none;
 	font-style: normal;
@@ -1282,7 +1287,7 @@ small {
 	color: #fff;
 	background: #16a5af;
 	border-color: #139098
-}
+} */
 
 #dashboard .wrapper {
 	min-height: 100vh;
@@ -1463,5 +1468,9 @@ small {
 #dashboard .logout {
 	margin: 2rem
 }
+
+/* .icon-angle-left:before {
+	content: "\E620"
+} */
 
 /*# sourceMappingURL=dashboard.min.css.map */

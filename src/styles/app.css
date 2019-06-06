@@ -4364,13 +4364,247 @@ a {
 	bottom: 5.4rem
 }
 
-#wrapper-activity .download-bar {
+/* #wrapper-activity .download-bar {
 	bottom: 5.1rem
 }
 
-@font-face {
-	font-family:iconfont;src:url(../libs/fonts/iconfont.5dad573.eot);src:url(../libs/fonts/iconfont.5dad573.eot#iefix) format("embedded-opentype"),url(../libs/fonts/iconfont.85e328c.ttf) format("truetype"),url(../libs/fonts/iconfont.59dcae0.svg#iconfont) format("svg")
+#dashboard .wrapper {
+	min-height: 100vh;
+	background: #fafafa
 }
+
+#dashboard .jumbotron {
+	height: 30vh;
+	position: relative;
+	background: url("../imgs/dashboard-bg.jpg") no-repeat;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center
+}
+
+#dashboard .jumbotron .header {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	background: #fff;
+	position: relative;
+	padding: 0 1rem;
+	height: 4.5rem;
+	line-height: 4.5rem;
+	color: inherit;
+	border-bottom: 1px solid #dedede;
+}
+
+#dashboard .jumbotron .header.transparent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	border: none;
+	z-index: 100;
+	background: transparent;
+}
+
+#dashboard .jumbotron .header .left .icon, .header .right .icon {
+	font-size: 2rem;
+	line-height: 4.5rem;
+	color: #999;
+	display: inline-block;
+	text-decoration: none;
+}
+
+#dashboard .jumbotron .header .middle {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+	font-size: 1.6rem;
+	text-align: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#dashboard .jumbotron .header .right {
+	text-align: right;
+}
+
+#dashboard .jumbotron .member {
+	min-width: 6rem;
+	color: #fff;
+	text-align: center
+}
+
+#dashboard .jumbotron .member .nick-name {
+	word-break: keep-all;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 36%;
+	text-align: center;
+	color: #FFF;
+	font-size: 1.3rem;
+	display: inline-block;
+	color: #FFF
+}
+
+#dashboard .jumbotron .member img {
+	display: block;
+	width: 6rem;
+	height: 6rem;
+	margin: 0 auto 0.5rem;
+	border-radius: 50%
+} */
+
+/* #dashboard .jumbotron .member i {
+	background: url(../images/clipboard.png) center center no-repeat;
+	width: 1.6rem;
+	height: 1.6rem;
+	background-size: contain;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 0.4rem
+} */
+
+/* #dashboard .list-group {
+	background: white;
+	padding: 0;
+	margin: 0 0 3rem;
+	list-style: none;
+	border-top: 1px solid #dedede;
+	border-bottom: 1px solid #dedede
+}
+
+#dashboard .list-group.with-icon .icon {
+	padding: 0.7rem 0.6rem;
+	background: red;
+	border-radius: 8px;
+	width: 2.5rem;
+	height: 2.5rem;
+	color: white;
+	font-size: inherit;
+	text-align: center;
+	margin: 1rem;
+	float: left
+}
+
+#dashboard .list-group.with-icon .my-order .icon {
+	background-color: #fb81c9
+}
+
+#dashboard .list-group.with-icon .my-film .icon {
+	background-color: #ff5400
+}
+
+#dashboard .list-group.with-icon .my-card .icon {
+	background-color: #71bf62
+}
+
+#dashboard .list-group.with-icon .my-wallet .icon {
+	background-color: #35b87f
+}
+
+#dashboard .list-group.with-icon .my-integral .icon {
+	background-color: #ffa200
+}
+
+#dashboard .list-group.with-icon .my-favorite .icon {
+	background-color: #f26d5f
+}
+
+#dashboard .list-group.with-icon .my-address .icon {
+	background-color: #b97cf2
+}
+
+#dashboard .list-group.with-icon .my-password .icon {
+	background-color: #5b99ee
+}
+
+#dashboard .list-group .list-group-item {
+	display: block;
+	overflow: hidden;
+	color: #333;
+	text-decoration: none;
+	position: relative
+}
+
+#dashboard .list-group .list-group-item .list-title {
+	display: block;
+	margin-left: 4rem;
+	border-bottom: 1px solid #dedede;
+	line-height: 2.5rem;
+	padding: 1rem 0;
+	position: relative
+}
+
+#dashboard .list-group .list-group-item .list-title .listnum {
+	display: inline-block;
+	font-style: normal;
+	font-size: 1.2rem;
+	width: 1.8rem;
+	height: 1.8rem;
+	line-height: 1.8rem;
+	background: #ff5400;
+	color: #fff;
+	border-radius: 50%;
+	text-align: center;
+	position: absolute;
+	right: 3rem;
+	top: 1.4rem
+}
+
+#dashboard .list-group .list-group-item .list-title:after {
+	content: "\f105";
+	color: #999;
+	float: right;
+	font-family: 'icomoon-wap' !important;
+	line-height: 2.5rem;
+	margin-right: 1rem
+}
+
+#dashboard .list-group .list-group-item .list-last {
+	border-bottom: none
+}
+
+#dashboard .list-group .list-group-item.my-service .icon-service {
+	background: url("../imgs/centerIcon.png") left center no-repeat;
+	background-size: 2.5rem 2.5rem
+}
+
+#dashboard .list-group .list-group-item.my-service .tel {
+	display: inline;
+	line-height: 4.6rem;
+	color: #4e4e4e;
+	font-size: 1.4rem
+}
+
+#dashboard .list-group .list-group-item.my-service .list-last {
+	display: block;
+	line-height: 2.5rem;
+	padding: 1rem 0
+}
+
+#dashboard .logout {
+	margin: 2rem
+} */
+
+@font-face {
+	font-family:iconfont;
+	src:url(../libs/fonts/iconfont.5dad573.eot);
+	src:url(../libs/fonts/iconfont.5dad573.eot#iefix) format("embedded-opentype"),url(../libs/fonts/iconfont.85e328c.ttf) format("truetype"),url(../libs/fonts/iconfont.59dcae0.svg#iconfont) format("svg")
+}
+
+/* @font-face {
+  font-family:'icomoon-wap';
+  src:url("../libs/fonts/memberPage/icomoon-wap.eot?e9zojh");
+  src:url("../libs/fonts/memberPage/icomoon-wap.eot?e9zojh#iefix") format("embedded-opentype"),url("../libs/fonts/memberPage/icomoon-wap.ttf?e9zojh") format("truetype"),url("../libs/fonts/memberPage/icomoon-wap.woff?e9zojh") format("woff"),url("../libs/fonts/memberPage/icomoon-wap.svg?e9zojh#icomoon-wap") format("svg");font-weight:normal;font-style:normal
+} */
 
 .icon {
 	font-family: iconfont!important;
@@ -4631,6 +4865,29 @@ a {
 .icon-sort-down:before {
 	content: "\E63B"
 }
+
+/* #dashboard .icon {
+	font-family: 'icomoon-wap' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+#dashboard .icon-bell-o:before {
+	content: "\f0a2"
+}
+
+#dashboard .icon-angle-left:before {
+	content: "\f104"
+} */
+
+
+
 /*!
  * animate.css -http://daneden.me/animate
  * Version - 3.5.1

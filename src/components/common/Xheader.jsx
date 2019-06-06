@@ -5,16 +5,16 @@ import SortsModal from './SortsModal'
 
 const Xheader = (props) => {
   const {
-    cityName, showBack = false, history, dispatch,
+    cityName, showBack = false, history, dispatch, showSortsModal,
   } = props
   const navigateTo = () => { history.push({ pathname: '/city' }) }
   const linkToSearch = () => { history.push({ pathname: '/search' }) }
   const backHome = () => { history.push({ pathname: '/' }) }
   const handleSorts = () => {
     dispatch({
-      type: 'setListData',
+      type: 'setShowModal',
       payload: {
-        showSortsModal: true,
+        showSortsModal: !showSortsModal,
       },
     })
   }
@@ -65,5 +65,7 @@ const Xheader = (props) => {
 
 export default connect((state) => {
   const { cityName } = state.app
-  return { cityName }
+  const { listData } = state.listPage
+  const { showSortsModal } = listData
+  return { cityName, showSortsModal }
 })(Xheader)

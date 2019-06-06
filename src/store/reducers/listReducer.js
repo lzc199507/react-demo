@@ -31,6 +31,11 @@ export default function listReducer (state = defaultState, action) {
       return {
         ...state,
       }
+    case 'setShowModal':
+      state.listData.showSortsModal = payload.showSortsModal
+      return {
+        ...state,
+      }
 
     default:
       return state

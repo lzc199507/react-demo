@@ -21,7 +21,7 @@ const SortsModal = ({ showSortsModal, dispatch }) => {
   const toggleBox = (newOrder) => {
     setOrder(newOrder)
     dispatch({
-      type: 'setListData',
+      type: 'setShowModal',
       payload: {
         showSortsModal: false,
       },
