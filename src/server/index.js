@@ -3,7 +3,7 @@ import { RequestServer } from './Request'
 
 const {
   getIndexData, getCategoryList, getCityList, getActivityDetail, getMovieDetail,
-  getSearchData, getKeywordData, getAccurateKeywordData,
+  getSearchData, getKeywordData, getAccurateKeywordData, getMemberLetter, getMemberDiscount,
 } = allApi
 
 export async function queryIndexData (params) {
@@ -65,6 +65,22 @@ export async function queryKeywordData (params) {
 export async function queryAccurateKeywordData (params) {
   const res = await RequestServer({
     url: getAccurateKeywordData,
+    data: params,
+  })
+  return res
+}
+
+export async function queryMemberLetter (params) {
+  const res = await RequestServer({
+    url: getMemberLetter,
+    data: params,
+  })
+  return res
+}
+
+export async function queryMemberDiscount (params) {
+  const res = await RequestServer({
+    url: getMemberDiscount,
     data: params,
   })
   return res

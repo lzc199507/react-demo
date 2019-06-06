@@ -9,6 +9,8 @@ const allApi = {
   getSearchData: `${API}/getSearchData`,
   getKeywordData: `${API}/getKeywordData`,
   getAccurateKeywordData: `${API}/getAccurateKeywordData`,
+  getMemberLetter: `${API}/getMemberLetter`,
+  getMemberDiscount: `${API}/getMemberDiscount`,
 }
 
 module.exports = {

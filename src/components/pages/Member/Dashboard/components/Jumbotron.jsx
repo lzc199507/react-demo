@@ -1,14 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const Jumbotron = () => {
+const Jumbotron = ({ history }) => {
   return (
     <div className="jumbotron">
       <header className="header transparent">
         <span className="left">
-          <i className="icon-angle-left icon" href="http://m.xishiqu.com" />
+          <i className="icon-angle-left icon" onClick={() => history.go(-1)} />
         </span>
         <span className="middle" />
-        <div className="right"><a href="http://m.xishiqu.com/member/letter"><span className="icon-bell-o icon" /></a></div>
+        <div className="right"><div onClick={() => history.push({ pathname: '/member/letter' })}><span className="icon-bell-o icon" /></div></div>
       </header>
       <div className="member">
         <img alt="menberImg" src="http://m.xishiqu.com/m/images/default-avatar.png" />
@@ -16,6 +17,10 @@ const Jumbotron = () => {
       </div>
     </div>
   )
+}
+
+Jumbotron.propTypes = {
+  history: PropTypes.object,
 }
 
 export default Jumbotron

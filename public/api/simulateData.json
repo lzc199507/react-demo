@@ -1,0 +1,115 @@
+{
+  "memberLetterData": {
+    "lists": [
+      {
+        "lid": 2214541,
+        "fbContent": "183****7830回复了你的评论",
+        "fbTime": "2018-12-28 09:49:29"
+      },
+      {
+        "lid": 2213408,
+        "fbContent": "浮华生世回复了你的评论",
+        "fbTime": "2018-12-17 09:32:37"
+      },
+      {
+        "lid": 2213122,
+        "fbContent": "憨豆回复了你的评论",
+        "fbTime": "2018-12-14 09:32:49"
+      },
+      {
+        "lid": 2212225,
+        "fbContent": "sun4061回复了你的评论",
+        "fbTime": "2018-12-04 11:32:11"
+      },
+      {
+        "lid": 2212104,
+        "fbContent": "200元礼包领取成功",
+        "fbTime": "2018-12-03 12:39:53"
+      }
+    ],
+    "hasMore": false
+  },
+  "memberDiscountData": {
+    "coupons": [
+      {
+        "packageAmt": "100.00",
+        "discount": [
+          "仅限App端使用"
+        ],
+        "info": "满2000减100优惠券限APP每台设备限1次",
+        "status": "已过期",
+        "expireTime": "2019-01-02",
+        "limitAmt": "商品金额满2000.00元使用",
+        "frontCate": "除电影票类目均可使用",
+        "leftLimit": 1,
+        "packageCode": "xinlibao1000a5c04b399ce3b73478510963"
+      },
+      {
+        "packageAmt": "50.00",
+        "discount": [
+          "仅限App端使用"
+        ],
+        "info": "满1000减50优惠券限APP每台设备限1次",
+        "status": "已过期",
+        "expireTime": "2019-01-02",
+        "limitAmt": "商品金额满1000.00元使用",
+        "frontCate": "除电影票类目均可使用",
+        "leftLimit": 1,
+        "packageCode": "xinlibao50a5c04b399cdb8a3478510970"
+      },
+      {
+        "packageAmt": "30.00",
+        "discount": [
+          "仅限App端使用"
+        ],
+        "info": "满300减30优惠券限APP每台设备限1次",
+        "status": "已过期",
+        "expireTime": "2019-01-02",
+        "limitAmt": "商品金额满300.00元使用",
+        "frontCate": "除电影票类目均可使用",
+        "leftLimit": 1,
+        "packageCode": "xinlibao305c04b399cd2943478510202"
+      },
+      {
+        "packageAmt": "10.00",
+        "discount": [
+          "仅限App端使用"
+        ],
+        "info": "满100减10优惠券限APP每台设备限1次",
+        "status": "已过期",
+        "expireTime": "2019-01-02",
+        "limitAmt": "商品金额满100.00元使用",
+        "frontCate": "除电影票类目均可使用",
+        "leftLimit": 1,
+        "packageCode": "xinlibao105c04b399cc7da3478510723"
+      },
+      {
+        "packageAmt": "5.00",
+        "discount": [
+          "仅限App端使用"
+        ],
+        "info": "5元立减券限APP每台设备限1次",
+        "status": "已过期",
+        "expireTime": "2019-01-02",
+        "limitAmt": "",
+        "frontCate": "除电影票类目均可使用",
+        "leftLimit": 1,
+        "packageCode": "xinlibao55c04b399cb6ee3478510951"
+      },
+      {
+        "packageAmt": "5.00",
+        "discount": [
+          "仅限App端使用"
+        ],
+        "info": "5元立减券限APP每台设备限1次",
+        "status": "已过期",
+        "expireTime": "2019-01-02",
+        "limitAmt": "",
+        "frontCate": "除电影票类目均可使用",
+        "leftLimit": 1,
+        "packageCode": "xinlibao55c04b399cbf8c3478510116"
+      }
+    ],
+    "hasMore": false
+  }
+}

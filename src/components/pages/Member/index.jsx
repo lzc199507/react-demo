@@ -1,33 +1,19 @@
 import React from 'react'
-import 'src/styles/dashboard.scss'
-import Jumbotron from './components/Jumbotron'
+import { Route, Switch } from 'react-router-dom'
+import 'src/styles/member.scss'
+import Dashboard from './Dashboard'
+import Letter from './Letter'
+import Discount from './Discount'
 
 const Member = () => {
+  const baseUrl = '/member'
   return (
-    <div id="dashboard">
-      <div className="wrapper wrap-content">
-        <Jumbotron />
-        <div className="list-group with-icon">
-          <a className="list-group-item my-order" href="http://m.xishiqu.com/member/order">
-            <span className="icon icon-list" />
-            <span className="list-title">
-演出订单
-            </span>
-          </a>
-          <a className="list-group-item my-film" href="/films/my-film">
-            <span className="icon icon-list" />
-            <span className="list-title">电影订单</span>
-          </a>
-          <a className="list-group-item my-card" href="http://m.xishiqu.com/member/discount">
-            <span className="icon icon-credit-card" />
-            <span className="list-title">我的卡券</span>
-          </a>
-          <a className="list-group-item my-wallet" href="http://m.xishiqu.com/member/wallet">
-            <span className="icon icon-suitcase" />
-            <span className="list-title">我的钱包</span>
-          </a>
-        </div>
-      </div>
+    <div id="MemberPage">
+      <Switch>
+        <Route exact path={`${baseUrl}`} component={Dashboard} />
+        <Route exact path={`${baseUrl}/letter`} component={Letter} />
+        <Route exact path={`${baseUrl}/discount`} component={Discount} />
+      </Switch>
     </div>
   )
 }

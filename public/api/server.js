@@ -7,6 +7,9 @@ let express = require('express')
 let request = require('request')
 
 
+// 引入模拟数据
+const myData = require('./simulateData.json')
+
 // 导入proxy
 // var proxy = require('http-proxy-middleware');
 
@@ -45,7 +48,7 @@ app.get('/init', (req, res) => {
 // http://m.xishiqu.com/ajax/home/cityList
 app.get('/getCityList', (req, res) => {
   res.append('Access-Control-Allow-Origin', '*')
-	
+
   request('http://m.xishiqu.com/ajax/home/cityList', (err, result, body) => {
     res.send(body)
   })
@@ -177,14 +180,39 @@ app.get('/getCategoryList', (req, res) => {
 
   }, (err, result, body) => {
     res.send(body)
-  })	
+  })
+})
+
+// 会员页
+// 获取站内信息内容
+// http://m.xishiqu.com/ajax/member/letter?page=1
+app.get('/getMemberLetter', (req, res) => {
+  res.append('Access-Control-Allow-Origin', '*')
+  // request({
+  //   url: 'http://m.xishiqu.com/ajax/member/letter?page=1',
+  // }, (err, result, body) => {
+  //   res.send(body)
+  // })
+  res.send(myData.memberLetterData)
+})
+
+// 折扣页
+// http://m.xishiqu.com/ajax/member/coupons?page=1
+app.get('/getMemberDiscount', (req, res) => {
+  res.append('Access-Control-Allow-Origin', '*')
+  // request({
+  //   url: 'http://m.xishiqu.com/ajax/member/coupons?page=1',
+  // }, (err, result, body) => {
+  //   res.send(body)
+  // })
+  res.send(myData.memberDiscountData)
 })
 
 
-var server = app.listen(1234, () => {
-  let host = server.address().address
-  let port = server.address().port
- 
+app.listen(1234, () => {
+  // let host = server.address().address
+  // let port = server.address().port
+
   // console.log("访问地址为 http://%s:%s", host, port);
   console.log(`server start in port ${1234}`)
 })
