@@ -8,6 +8,7 @@ import Comment from 'components/pages/Comment'
 // import Search from './components/pages/Search/Search.jsx'
 import Search from 'components/pages/Search'
 import Detail from 'components/pages/Detail'
+import Login from 'components/pages/Login'
 import Member from 'components/pages/Member'
 // import Comment from './components/pages/Detail/Comment.jsx'
 
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path="/detail/:name" component={Detail} />
           <Route path="/moviedetail/:filmId" component={MovieDetail} />
           <Route path="/comment" component={Comment} />
+          <Route path="/login" component={Login} />
           <Route path="/member" component={Member} />
           <Redirect exact from="/" to="/home" />
         </Switch>

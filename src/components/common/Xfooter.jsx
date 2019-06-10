@@ -31,7 +31,9 @@ const footerNav = [
 ]
 
 const Xfooter = (props) => {
-  const { tabNav, history, dispatch } = props
+  const {
+    tabNav, history, dispatch,
+  } = props
   const [nav, setNav] = useState(0)
   useEffect(() => {
     setNav(tabNav)

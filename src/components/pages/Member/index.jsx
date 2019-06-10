@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import 'src/styles/member.scss'
 import Dashboard from './Dashboard'
 import Letter from './Letter'
 import Discount from './Discount'
 
-const Member = () => {
+const Member = ({ isLogin, history }) => {
+  useEffect(() => {
+    console.log('isLogin', isLogin)
+    if (!isLogin) {
+      history.push({ pathname: '/login' })
+    }
+  }, [isLogin])
+
   const baseUrl = '/member'
+
   return (
     <div id="MemberPage">
       <Switch>
@@ -18,4 +28,12 @@ const Member = () => {
   )
 }
 
-export default Member
+Member.propTypes = {
+  isLogin: PropTypes.bool,
+  history: PropTypes.object,
+}
+
+export default connect((state) => {
+  const { isLogin } = state.app
+  return { isLogin }
+})(Member)
