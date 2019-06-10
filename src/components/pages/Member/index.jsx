@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import 'src/styles/dashboard.scss'
 import Jumbotron from './components/Jumbotron'
 
-const Member = () => {
+const Member = ({ isLogin, history }) => {
+  useEffect(() => {
+    console.log('isLogin', isLogin)
+    if (!isLogin) {
+      history.push({ pathname: '/login' })
+    }
+  }, [isLogin])
   return (
     <div id="dashboard">
       <div className="wrapper wrap-content">
@@ -11,7 +19,7 @@ const Member = () => {
           <a className="list-group-item my-order" href="http://m.xishiqu.com/member/order">
             <span className="icon icon-list" />
             <span className="list-title">
-演出订单
+              演出订单
             </span>
           </a>
           <a className="list-group-item my-film" href="/films/my-film">
@@ -32,4 +40,12 @@ const Member = () => {
   )
 }
 
-export default Member
+Member.propTypes = {
+  isLogin: PropTypes.bool,
+  history: PropTypes.object,
+}
+
+export default connect((state) => {
+  const { isLogin } = state.app
+  return { isLogin }
+})(Member)

@@ -9,6 +9,7 @@ const defaultState = {
   cityName: '',
   categoryIdx: 0,
   initIndexData: {},
+  isLogin: false,
 }
 
 function appReducer (state = defaultState, action) {
@@ -37,6 +38,12 @@ function appReducer (state = defaultState, action) {
         ...payload,
       }
     case 'setCategoryIdx':
+      return {
+        ...state,
+        ...payload,
+      }
+    case 'setSignIn':
+      console.log('payload', payload)
       return {
         ...state,
         ...payload,
