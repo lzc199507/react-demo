@@ -41,3 +41,11 @@ npm start
 
 ---
 更多demo查看 [图片展示](https://github.com/lzc199507/react-demo/tree/master/PictureDemonstration). 
+
+## About Me
+
+> Name: cheng
+>
+> QQ: 929507896
+>
+> Email：929507896@qq.com
