@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const { Fragment } = React
 
@@ -6,13 +7,13 @@ const ListGroup = ({ history }) => {
   return (
     <Fragment>
       <div className="list-group with-icon">
-        <a className="list-group-item my-order" href="http://m.xishiqu.com/member/order">
+        <a className="list-group-item my-order" onClick={() => history.push({ pathname: '/member/order' })}>
           <span className="icon icon-list" />
           <span className="list-title">
             演出订单
           </span>
         </a>
-        <a className="list-group-item my-film" href="/films/my-film">
+        <a className="list-group-item my-film" onClick={() => history.push({ pathname: '/films/my-film' })}>
           <span className="icon icon-list" />
           <span className="list-title">电影订单</span>
         </a>
@@ -20,21 +21,21 @@ const ListGroup = ({ history }) => {
           <span className="icon icon-credit-card" />
           <span className="list-title">我的卡券</span>
         </a>
-        <a className="list-group-item my-wallet" href="http://m.xishiqu.com/member/wallet">
+        <a className="list-group-item my-wallet" onClick={() => history.push({ pathname: '/member/wallet' })}>
           <span className="icon icon-suitcase" />
           <span className="list-title" style={{ borderBottom: 'none' }}>我的钱包</span>
         </a>
       </div>
       <div className="list-group with-icon">
-        <a className="list-group-item my-favorite" href="http://m.xishiqu.com/member/favorite">
+        <a className="list-group-item my-favorite" onClick={() => history.push({ pathname: '/member/favorite' })}>
           <span className="icon icon-heart-o" />
           <span className="list-title">我的收藏</span>
         </a>
-        <a className="list-group-item my-address" href="http://m.xishiqu.com/member/address">
+        <a className="list-group-item my-address" onClick={() => history.push({ pathname: '/member/address' })}>
           <span className="icon icon-address" />
           <span className="list-title">收货地址</span>
         </a>
-        <a className="list-group-item my-password" href="http://m.xishiqu.com/member/password/change">
+        <a className="list-group-item my-password" onClick={() => history.push({ pathname: '/member/password/change' })}>
           <span className="icon icon-user" />
           <span className="list-title">修改密码</span>
         </a>
@@ -45,6 +46,10 @@ const ListGroup = ({ history }) => {
       </div>
     </Fragment>
   )
+}
+
+ListGroup.propTypes = {
+  history: PropTypes.object,
 }
 
 export default ListGroup
