@@ -9,7 +9,6 @@ import Discount from './Discount'
 
 const Member = ({ isLogin, history }) => {
   useEffect(() => {
-    console.log('isLogin', isLogin)
     if (!isLogin) {
       history.push({ pathname: '/login' })
     }

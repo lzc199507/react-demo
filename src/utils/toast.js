@@ -5,16 +5,16 @@ const defaultDuring = 2000
 const instance = new _.Toast({
   el: document.createElement('div'),
 })
-console.log('instance', instance)
+// console.log('instance', instance)
 
 const toast = (options) => {
-  console.log('options', options)
+  // console.log('options', options)
   const { icon = '', during = 2000, content = '' } = options
 
   instance.icon = icon
   instance.content = content
   // instance.during = during
-  console.log('instance', instance)
+  // console.log('instance', instance)
 
   instance.show()
   // document.body.appendChild(loadingEl)
@@ -31,7 +31,7 @@ module.exports = {
     instance.close()
   },
   success (params) {
-    console.log('params', params)
+    // console.log('params', params)
     const type = typeof params
     let options = {
       icon: 'icon-success',
@@ -62,7 +62,7 @@ module.exports = {
     toast(options)
   },
   info (params) {
-    console.log('params', params)
+    // console.log('params', params)
     const type = typeof params
     let options = {
       icon: 'icon-info',

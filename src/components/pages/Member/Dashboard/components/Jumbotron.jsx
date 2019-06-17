@@ -6,7 +6,7 @@ const Jumbotron = ({ history }) => {
     <div className="jumbotron">
       <header className="header transparent">
         <span className="left">
-          <i className="icon-angle-left icon" onClick={() => history.go(-1)} />
+          <i className="icon-angle-left icon" onClick={() => history.push({ pathname: '/home' })} />
         </span>
         <span className="middle" />
         <div className="right"><div onClick={() => history.push({ pathname: '/member/letter' })}><span className="icon-bell-o icon" /></div></div>
