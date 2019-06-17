@@ -26,23 +26,18 @@ npm start
 
 ## 图片demo
 
-![首页](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E9%A6%96%E9%A1%B51.png?raw=true)
-![首页](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E9%A6%96%E9%A1%B52.png?raw=true)
-___
-![城市列表](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E5%9F%8E%E5%B8%82%E5%88%97%E8%A1%A8%E9%A1%B5.png?raw=true)
-![搜索](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E6%90%9C%E7%B4%A2%E9%A1%B51.png?raw=true)
-___
-![搜索](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E6%90%9C%E7%B4%A2%E9%A1%B53.png?raw=true)
-![列表](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E5%88%86%E7%B1%BB%E5%88%97%E8%A1%A8%E9%A1%B51.png?raw=true)
-___
-![列表](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E5%88%86%E7%B1%BB%E5%88%97%E8%A1%A8%E9%A1%B52.png?raw=true)
-![详情](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E6%BC%94%E5%87%BA%E8%AF%A6%E6%83%85%E9%A1%B51.png?raw=true)
-___
-![详情](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E7%94%B5%E5%BD%B1%E8%AF%A6%E6%83%85%E9%A1%B5.png?raw=true)
-![登录](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E7%99%BB%E5%BD%95%E9%A1%B5.png?raw=true)
-___
-![会员](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E4%BC%9A%E5%91%98%E9%A1%B5.png?raw=true)
-![卡券](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E4%BC%9A%E5%91%98%E5%8D%A1%E5%88%B8%E9%A1%B5.png?raw=true)
+---
+|         首页         |        首页         |         城市列表页         |         搜索页         |
+| :------------------: | :-------------------: | :----------------------: | :----------------------: |
+| ![](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E9%A6%96%E9%A1%B51.png?raw=true) | ![](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E9%A6%96%E9%A1%B52.png?raw=true) | ![](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E5%9F%8E%E5%B8%82%E5%88%97%E8%A1%A8%E9%A1%B5.png?raw=true) | ![](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E6%90%9C%E7%B4%A2%E9%A1%B51.png?raw=true) |
+
+|         搜索页          |          列表页           |            列表页            |          演出详情页           |
+| :-------------------: | :-------------------------: | :----------------------------: | :-------------------------: |
+| ![](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E6%90%9C%E7%B4%A2%E9%A1%B53.png?raw=true) | ![](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E5%88%86%E7%B1%BB%E5%88%97%E8%A1%A8%E9%A1%B51.png?raw=true) | ![](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E5%88%86%E7%B1%BB%E5%88%97%E8%A1%A8%E9%A1%B52.png?raw=true) | ![](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E6%BC%94%E5%87%BA%E8%AF%A6%E6%83%85%E9%A1%B51.png?raw=true) |
+
+|        电影详情页        |          登录页           |        会员页         |         卡券页         |
+| :------------------: | :-------------------------: | :---------------------: | :------------------: |
+| ![](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E7%94%B5%E5%BD%B1%E8%AF%A6%E6%83%85%E9%A1%B5.png?raw=true) | ![](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E7%99%BB%E5%BD%95%E9%A1%B5.png?raw=true) | ![](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E4%BC%9A%E5%91%98%E9%A1%B5.png?raw=true) | ![](https://github.com/lzc199507/react-demo/blob/master/PictureDemonstration/%E4%BC%9A%E5%91%98%E5%8D%A1%E5%88%B8%E9%A1%B5.png?raw=true) |
 
 ---
 更多demo查看 [图片展示](https://github.com/lzc199507/react-demo/tree/master/PictureDemonstration). 
