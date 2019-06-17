@@ -5,8 +5,9 @@
 
 ## 使用到的技术有
 * nodejs(Express框架) (获取接口数据)
-* redux  (数据管理)
-* react  (渲染视图)
+* react-redux  (数据管理)
+* react(16.8.6 使用hook)  (渲染视图)
+* axios
 
 (后续想加入MySQL或MongoDB来模拟用户)
 
