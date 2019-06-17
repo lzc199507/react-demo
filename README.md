@@ -4,7 +4,7 @@
 -该网站是使用Vue做的移动端，模仿该网站使用的是react
 
 ## 使用到的技术有
-* nodejs (获取接口数据)
+* nodejs(Express框架) (获取接口数据)
 * redux  (数据管理)
 * react  (渲染视图)
 
